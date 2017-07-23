@@ -36,3 +36,12 @@ if let spaceRange = testString.range(of: " ", range: searchRange) {
 // Reverse string words in place
 testString = "this is the message received"
 testString.reverseWordsInPlace()
+
+testString = "this"
+testString.reverseWordsInPlace()
+
+testString = "\u{1f616}\u{1f600} is message coded"
+testString.reverseWordsInPlace()
+
+
+

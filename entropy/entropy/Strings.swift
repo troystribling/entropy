@@ -25,18 +25,21 @@ extension String {
 
     public mutating func reverseWordsInPlace() {
         reverseInPlace()
-        print(self)
         var searchIndex = startIndex
-        while searchIndex != endIndex {
+        while true {
             let searchRange = searchIndex..<endIndex
-            if let spaceRange = range(of: "", range: searchRange) {
+            if let spaceRange = range(of: " ", range: searchRange) {
                 let wordRange = searchIndex..<spaceRange.lowerBound
                 var reversedWord = self[wordRange]
                 reversedWord.reverseInPlace()
                 replaceSubrange(wordRange, with: reversedWord)
                 searchIndex = spaceRange.upperBound
+            } else {
+                var reversedWord = self[searchRange]
+                reversedWord.reverseInPlace()
+                replaceSubrange(searchRange, with: reversedWord)
+                break
             }
-            print(self)
         }
     }
 
