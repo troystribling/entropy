@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0572268D1F250C3D004C391D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572268C1F250C3D004C391D /* Strings.swift */; };
 		05A01C1A1F23B6AA00D191CA /* entropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A01C101F23B6AA00D191CA /* entropy.framework */; };
 		05A01C1F1F23B6AA00D191CA /* entropyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C1E1F23B6AA00D191CA /* entropyTests.swift */; };
 		05A01C211F23B6AA00D191CA /* entropy.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A01C131F23B6AA00D191CA /* entropy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05A01C311F23C8F700D191CA /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C301F23C8F700D191CA /* Arrays.swift */; };
+		05A01C331F23CAFF00D191CA /* Queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C321F23CAFF00D191CA /* Queues.swift */; };
+		05A01C351F23CB0E00D191CA /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C341F23CB0E00D191CA /* BinaryTree.swift */; };
+		05A01C371F23CB1E00D191CA /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C361F23CB1E00D191CA /* MergeSort.swift */; };
+		05A01C391F23CB2A00D191CA /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C381F23CB2A00D191CA /* BinarySearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0572268C1F250C3D004C391D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		0572268E1F250DB5004C391D /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Strings.playground; sourceTree = "<group>"; };
 		05A01C101F23B6AA00D191CA /* entropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = entropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A01C131F23B6AA00D191CA /* entropy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = entropy.h; sourceTree = "<group>"; };
 		05A01C141F23B6AA00D191CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +38,11 @@
 		05A01C1E1F23B6AA00D191CA /* entropyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entropyTests.swift; sourceTree = "<group>"; };
 		05A01C201F23B6AA00D191CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A01C2B1F23B73500D191CA /* Arrays.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arrays.playground; sourceTree = "<group>"; };
+		05A01C301F23C8F700D191CA /* Arrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
+		05A01C321F23CAFF00D191CA /* Queues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queues.swift; sourceTree = "<group>"; };
+		05A01C341F23CB0E00D191CA /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		05A01C361F23CB1E00D191CA /* MergeSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		05A01C381F23CB2A00D191CA /* BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,12 @@
 			children = (
 				05A01C131F23B6AA00D191CA /* entropy.h */,
 				05A01C141F23B6AA00D191CA /* Info.plist */,
+				05A01C301F23C8F700D191CA /* Arrays.swift */,
+				05A01C321F23CAFF00D191CA /* Queues.swift */,
+				05A01C341F23CB0E00D191CA /* BinaryTree.swift */,
+				05A01C361F23CB1E00D191CA /* MergeSort.swift */,
+				05A01C381F23CB2A00D191CA /* BinarySearch.swift */,
+				0572268C1F250C3D004C391D /* Strings.swift */,
 			);
 			path = entropy;
 			sourceTree = "<group>";
@@ -92,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				05A01C2B1F23B73500D191CA /* Arrays.playground */,
+				0572268E1F250DB5004C391D /* Strings.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";
@@ -158,6 +178,7 @@
 				TargetAttributes = {
 					05A01C0F1F23B6AA00D191CA = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					05A01C181F23B6AA00D191CA = {
@@ -206,6 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A01C311F23C8F700D191CA /* Arrays.swift in Sources */,
+				05A01C331F23CAFF00D191CA /* Queues.swift in Sources */,
+				05A01C371F23CB1E00D191CA /* MergeSort.swift in Sources */,
+				05A01C351F23CB0E00D191CA /* BinaryTree.swift in Sources */,
+				0572268D1F250C3D004C391D /* Strings.swift in Sources */,
+				05A01C391F23CB2A00D191CA /* BinarySearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +359,7 @@
 		05A01C251F23B6AA00D191CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -343,6 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gnos.us.entropy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -350,6 +379,7 @@
 		05A01C261F23B6AA00D191CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -368,6 +398,7 @@
 		05A01C281F23B6AA00D191CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = entropyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gnos.us.entropyTests;
@@ -379,6 +410,7 @@
 		05A01C291F23B6AA00D191CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = entropyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gnos.us.entropyTests;
@@ -406,6 +438,7 @@
 				05A01C261F23B6AA00D191CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05A01C271F23B6AA00D191CA /* Build configuration list for PBXNativeTarget "entropyTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +447,7 @@
 				05A01C291F23B6AA00D191CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
