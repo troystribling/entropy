@@ -77,3 +77,7 @@ closureValidator(string: testString)
 testString = "{[}"
 closureValidator(string: testString)
 
+testString = "1"
+closureValidator(string: testString)
+
+

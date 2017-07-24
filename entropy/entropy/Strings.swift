@@ -70,9 +70,7 @@ public func closureValidator(string: String) -> Bool {
         return String(lastOpen) != closure
     }
 
-    for i in 0..<string.characters.count {
-        let index = string.index(string.startIndex, offsetBy: i)
-        let char = string.characters[index]
+    for char in string.characters {
         switch char {
         case "(", "{", "[":
             openClosures.append(char)
