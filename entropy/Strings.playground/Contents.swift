@@ -47,5 +47,15 @@ reverseWordsInPlace(string: &testString)
 testString = "\u{1f616}\u{1f600} is message coded"
 reverseWordsInPlace(string: &testString)
 
+testString = " this"
+reverseWordsInPlace(string: &testString)
+
+// Parenthesis closing
+testString = "What (a mess (this is (Hu))) cool"
+if let firstParenRange = testString.range(of: "(") {
+    parentheticals(string: testString, first:
+        testString.distance(from: testString.startIndex, to: firstParenRange.lowerBound))
+    testString.distance(from: testString.startIndex, to: testString.range(of: ")", options: .backwards)!.lowerBound)
+}
 
 

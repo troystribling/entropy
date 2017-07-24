@@ -42,3 +42,22 @@ public func reverseWordsInPlace(string: inout String) {
         }
     }
 }
+
+public func parentheticals(string: String, first: Int) -> Int {
+    var parenCount = 0
+    var closingParen = -1
+    for i in first..<string.characters.count {
+        let stringIndex = string.index(string.startIndex, offsetBy: i)
+        let char = string.characters[stringIndex]
+        if char == "(" {
+            parenCount += 1
+        } else if char == ")" {
+            parenCount -= 1
+        }
+        if parenCount == 0 {
+            closingParen = i
+            break
+        }
+    }
+    return closingParen
+}
