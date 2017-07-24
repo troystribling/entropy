@@ -61,3 +61,36 @@ public func parentheticals(string: String, first: Int) -> Int {
     }
     return closingParen
 }
+
+public func closureValidator(string: String) -> Bool {
+    var openClosures = [Character]()
+
+    let testClosure: (String) -> Bool = { closure in
+        let lastOpen = openClosures.removeLast()
+        return String(lastOpen) != closure
+    }
+
+    for i in 0..<string.characters.count {
+        let index = string.index(string.startIndex, offsetBy: i)
+        let char = string.characters[index]
+        switch char {
+        case "(", "{", "[":
+            openClosures.append(char)
+        case ")":
+            if testClosure("(") {
+                return false
+            }
+        case "]":
+            if testClosure("[") {
+                return false
+            }
+        case "}":
+            if testClosure("{") {
+                return false
+            }
+        default:
+            break
+        }
+    }
+    return true
+}

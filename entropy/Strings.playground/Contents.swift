@@ -58,4 +58,22 @@ if let firstParenRange = testString.range(of: "(") {
     testString.distance(from: testString.startIndex, to: testString.range(of: ")", options: .backwards)!.lowerBound)
 }
 
+// Clouse validation
+testString = "{1+[(3-1)+(4+2)]}"
+closureValidator(string: testString)
+
+testString = "{1+[(3-1+(4+2)]}"
+closureValidator(string: testString)
+
+testString = "{[]()}"
+closureValidator(string: testString)
+
+testString = "{[()]()[]}"
+closureValidator(string: testString)
+
+testString = "{[[)]}"
+closureValidator(string: testString)
+
+testString = "{[}"
+closureValidator(string: testString)
 
