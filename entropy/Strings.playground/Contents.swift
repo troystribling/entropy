@@ -14,34 +14,38 @@ print(testString)
 
 // Reverse string inplace
 testString = "123456"
-testString.reverseInPlace()
+reverseInPlace(string: &testString)
 print(testString)
 
-testString = "1234\u{1f616}"
-testString.reverseInPlace()
+//testString = "1234\u{1f616}"
+reverseInPlace(string: &testString)
 print(testString)
+
+testString = "\u{1f616}\u{1f600} test"
+reverseInPlace(string: &testString)
+
 
 // Replace subrange for reversed words
 testString = "this is a message"
-testString.reverseInPlace()
+reverseInPlace(string: &testString)
 let searchRange = testString.startIndex..<testString.endIndex
 testString.startIndex != testString.endIndex
 if let spaceRange = testString.range(of: " ", range: searchRange) {
     let wordRange = testString.startIndex..<spaceRange.lowerBound
     var reversedWord = testString[wordRange]
-    reversedWord.reverseInPlace()
+    reverseInPlace(string: &reversedWord)
     testString.replaceSubrange(wordRange, with: reversedWord)
 }
 
 // Reverse string words in place
 testString = "this is the message received"
-testString.reverseWordsInPlace()
+reverseWordsInPlace(string: &testString)
 
 testString = "this"
-testString.reverseWordsInPlace()
+reverseWordsInPlace(string: &testString)
 
 testString = "\u{1f616}\u{1f600} is message coded"
-testString.reverseWordsInPlace()
+reverseWordsInPlace(string: &testString)
 
 
 

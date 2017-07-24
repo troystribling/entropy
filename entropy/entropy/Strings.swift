@@ -8,39 +8,37 @@
 
 import Foundation
 
-extension String {
+public func reverseInPlace(string: inout String) {
+    reverseInPlace(string: &string, start: 0, end: string.characters.count)
+}
 
-    public mutating func reverseInPlace() {
-        let mid = characters.count/2
-        for offset in 0..<mid {
-            let lowIndex = index(startIndex, offsetBy: offset)
-            var hiIndex = index(endIndex, offsetBy: -offset - 1)
-            let lowCharacter = characters[lowIndex]
-            let hiCharacter = characters[hiIndex]
-            replaceSubrange(lowIndex...lowIndex, with: String(hiCharacter))
-            hiIndex = index(endIndex, offsetBy: -offset - 1)
-            replaceSubrange(hiIndex...hiIndex, with: String(lowCharacter))
+public func reverseInPlace(string: inout String, start: Int, end: Int) {
+    let mid = (end - start)/2
+    for offset in 0..<mid {
+        let startIndex = string.index(string.startIndex, offsetBy: start)
+        var endIndex = string.index(string.startIndex, offsetBy: end)
+        let lowIndex = string.index(startIndex, offsetBy: offset)
+        var hiIndex = string.index(endIndex, offsetBy: -offset - 1)
+        let lowCharacter = string.characters[lowIndex]
+        let hiCharacter = string.characters[hiIndex]
+        string.replaceSubrange(lowIndex...lowIndex, with: String(hiCharacter))
+        endIndex = string.index(string.startIndex, offsetBy: end)
+        hiIndex = string.index(endIndex, offsetBy: -offset - 1)
+        string.replaceSubrange(hiIndex...hiIndex, with: String(lowCharacter))
+    }
+}
+
+public func reverseWordsInPlace(string: inout String) {
+    reverseInPlace(string: &string)
+    let length = string.characters.count
+    var wordStartIndex = string.startIndex
+    for i in 0...length {
+        let currentIndex = string.index(string.startIndex, offsetBy: i)
+        if i == length || string.characters[currentIndex] == " " {
+            let start = string.distance(from: string.startIndex, to: wordStartIndex)
+            let end = string.distance(from: string.startIndex, to: currentIndex)
+            reverseInPlace(string: &string, start: start, end: end)
+            wordStartIndex = string.index(currentIndex, offsetBy: 1, limitedBy: string.endIndex) ?? string.endIndex
         }
     }
-
-    public mutating func reverseWordsInPlace() {
-        reverseInPlace()
-        var searchIndex = startIndex
-        while true {
-            let searchRange = searchIndex..<endIndex
-            if let spaceRange = range(of: " ", range: searchRange) {
-                let wordRange = searchIndex..<spaceRange.lowerBound
-                var reversedWord = self[wordRange]
-                reversedWord.reverseInPlace()
-                replaceSubrange(wordRange, with: reversedWord)
-                searchIndex = spaceRange.upperBound
-            } else {
-                var reversedWord = self[searchRange]
-                reversedWord.reverseInPlace()
-                replaceSubrange(searchRange, with: reversedWord)
-                break
-            }
-        }
-    }
-
 }
