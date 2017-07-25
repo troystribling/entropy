@@ -48,16 +48,9 @@ public class BSTNode : CustomStringConvertible {
             return
         }
         // Backtrack from left node
-        guard isBST(node: left, previous: previous) else {
-            return
-        }
-        // Should not happen
-        guard let previous = previous else {
-            return
-        }
+        printInOrder(node: left, previous: previous)
         print("value = \(value)")
-        isBST(node: right, previous: node)
-
+        printInOrder(node: right, previous: node)
     }
 }
 
