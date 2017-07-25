@@ -23,3 +23,6 @@ extension Array {
     }
 
 }
+
+public func getProductsOfAllIntsExceptAtIndex(array: Int) -> [Int] {
+}

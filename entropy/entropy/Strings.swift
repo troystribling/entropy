@@ -92,3 +92,48 @@ public func closureValidator(string: String) -> Bool {
     }
     return true
 }
+
+public func swap(string: inout String, i: Int, j: Int) {
+    guard let iIndex = string.index(string.startIndex, offsetBy: i, limitedBy: string.endIndex),
+          let jIndex = string.index(string.startIndex, offsetBy: j, limitedBy: string.endIndex),
+          i != j
+    else {
+        return
+    }
+
+    let iChar = string.characters[iIndex]
+    let jChar = string.characters[jIndex]
+
+    string.replaceSubrange(iIndex...iIndex, with: [jChar])
+    string.replaceSubrange(jIndex...jIndex, with: [iChar])
+}
+
+public func permute(string: String, permuted: String="", results: [String] = []) -> Set<String> {
+    guard string.characters.count > 0 else {
+        return Set(results + [permuted])
+    }
+    var response = Set(results)
+    for i in 0..<string.characters.count {
+        let index = string.index(string.startIndex, offsetBy: i)
+        let permutedUpdate = permuted + String(string.characters[index])
+        var remainingString = String(string.characters[string.startIndex..<index])
+        if let remaingIndex = string.index(string.startIndex, offsetBy: i+1, limitedBy: string.endIndex) {
+            remainingString += String(string.characters[remaingIndex..<string.endIndex])
+        }
+        response = permute(string: remainingString, permuted: permutedUpdate, results: Array(response))
+    }
+    return Set(response)
+}
+
+public func isAnagram(string: String) -> Bool {
+    var oddLetters = Set<Character>()
+    for char in string.characters {
+        if oddLetters.contains(char) {
+            oddLetters.remove(char)
+        } else {
+            oddLetters.insert(char)
+        }
+    }
+    return oddLetters.count <= 1
+}
+

@@ -58,7 +58,7 @@ if let firstParenRange = testString.range(of: "(") {
     testString.distance(from: testString.startIndex, to: testString.range(of: ")", options: .backwards)!.lowerBound)
 }
 
-// Clouse validation
+// Clouser validation
 testString = "{1+[(3-1)+(4+2)]}"
 closureValidator(string: testString)
 
@@ -80,4 +80,26 @@ closureValidator(string: testString)
 testString = "1"
 closureValidator(string: testString)
 
+// Swap two characters in string
+testString = "abcde"
+swap(string: &testString, i: 1, j: 3)
 
+// String permutations
+testString = "abc"
+permute(string: testString)
+
+// Anagrams
+testString = "civic"
+isAnagram(string: testString)
+
+testString = "viicc"
+isAnagram(string: testString)
+
+testString = "lost"
+isAnagram(string: testString)
+
+testString = "lool"
+isAnagram(string: testString)
+
+let test: Set = [1,2,3]
+let test2 = test + [5]
