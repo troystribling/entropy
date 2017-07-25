@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		057001131F270201006997EA /* BinarySearchTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearchTree.playground; sourceTree = "<group>"; };
 		0572268C1F250C3D004C391D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0572268E1F250DB5004C391D /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Strings.playground; sourceTree = "<group>"; };
 		05A01C101F23B6AA00D191CA /* entropy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = entropy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +113,7 @@
 			children = (
 				05A01C2B1F23B73500D191CA /* Arrays.playground */,
 				0572268E1F250DB5004C391D /* Strings.playground */,
+				057001131F270201006997EA /* BinarySearchTree.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";
