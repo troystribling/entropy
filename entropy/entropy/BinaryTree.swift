@@ -42,7 +42,7 @@ public class BSTNode : CustomStringConvertible {
         return isBST(node: right, previous: node)
     }
 
-    public func printInOrder(node: BSTNode?, previous: BSTNode) {
+    public func printInOrder(node: BSTNode?, previous: BSTNode?) {
         // node is leaf since it has no left or right
         guard let node = node else {
             return
@@ -52,7 +52,7 @@ public class BSTNode : CustomStringConvertible {
             return
         }
         // Should not happen
-        guard let previous = previous {
+        guard let previous = previous else {
             return
         }
         print("value = \(value)")
