@@ -31,7 +31,6 @@ public class BTNode : CustomStringConvertible {
         guard let node = node else {
             return true
         }
-        print("node=\(node), maxValue=\(maxValue), minValue=\(minValue)")
         if node.value >= maxValue || node.value <= minValue {
             return false
         }
@@ -50,6 +49,28 @@ public class BTNode : CustomStringConvertible {
         printInOrder(node: node.left)
         print("value = \(node.value)")
         printInOrder(node: node.right)
+    }
+
+    public func reverse() {
+        _ = reverse(node: self)
+    }
+
+    public func reverse(node: BTNode?) -> BTNode? {
+        guard let node = node else {
+            return nil
+        }
+        let tmpLeft = node.left
+        node.left = reverse(node: node.right)
+        node.right = reverse(node: tmpLeft)
+        return node
+    }
+
+    public func height() {
+        height(node: self)
+    }
+
+    public func height(node: BTNode?) {
+
     }
 }
 

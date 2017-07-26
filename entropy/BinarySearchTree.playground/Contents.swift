@@ -42,3 +42,11 @@ btRoot.printInOrder()
 // Validate BST
 bstRoot.isBST()
 btRoot.isBST()
+
+// Reverse BT
+print("\nBT")
+bstRoot.printInOrder()
+
+print("\nReversed BT")
+bstRoot.reverse()
+bstRoot.printInOrder()
