@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class BSTNode : CustomStringConvertible {
+public class BTNode : CustomStringConvertible {
 
-    fileprivate var value: Int
-    public var left: BSTNode?
-    public var right: BSTNode?
+    public var value: Int
+    public var left: BTNode?
+    public var right: BTNode?
 
-    internal init(value: Int) {
+    public init(value: Int) {
         self.value = value
     }
 
@@ -22,35 +22,34 @@ public class BSTNode : CustomStringConvertible {
         return "\(value)"
     }
 
-    public func isBST(node: BSTNode?, previous: BSTNode? = nil) -> Bool {
-        // node is leaf since it has no left or right
+    public func isBST() -> Bool {
+        return isBST(node: self, minValue: Int.min, maxValue: Int.max)
+    }
+
+    public func isBST(node: BTNode?, minValue: Int, maxValue: Int) -> Bool {
+        // node has no right or left
         guard let node = node else {
             return true
         }
-        // Back track from left node
-        guard isBST(node: left, previous: previous) else {
+        print("node=\(node), maxValue=\(maxValue), minValue=\(minValue)")
+        if node.value >= maxValue || node.value <= minValue {
             return false
         }
-        // Should not happen
-        guard let previous = previous else {
-            return false
-        }
-        // Node is left of previous
-        if previous.value > node.value {
-            return false
-        }
-        return isBST(node: right, previous: node)
+        return isBST(node: node.left, minValue: minValue, maxValue: node.value) &&
+               isBST(node: node.right, minValue: node.value, maxValue: maxValue)
     }
 
-    public func printInOrder(node: BSTNode?, previous: BSTNode?) {
-        // node is leaf since it has no left or right
+    public func printInOrder() {
+        printInOrder(node: self)
+    }
+
+    public func printInOrder(node: BTNode?) {
         guard let node = node else {
             return
         }
-        // Backtrack from left node
-        printInOrder(node: left, previous: previous)
-        print("value = \(value)")
-        printInOrder(node: right, previous: node)
+        printInOrder(node: node.left)
+        print("value = \(node.value)")
+        printInOrder(node: node.right)
     }
 }
 
