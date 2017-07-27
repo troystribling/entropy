@@ -97,20 +97,25 @@ public class BTNode : CustomStringConvertible {
         return node
     }
 
-    public func height() {
-        height(node: self)
+    public func height() -> Int {
+        return height(node: self)
     }
 
-    public func height(node: BTNode?) {
-
+    public func height(node: BTNode?) -> Int {
+        guard let node = node else {
+            return 0
+        }
+        let leftHeight = height(node: node.left)
+        let rightHeight = height(node: node.right)
+        return leftHeight < rightHeight ? leftHeight : rightHeight
     }
 
     public func printRows() {
-
+        printRows(node: self, rows: [])
     }
 
-    public func printRows(node: BTNode?) {
-
+    public func printRows(node: BTNode?, rows: [BTNode]) {
+        
     }
 }
 
