@@ -51,6 +51,36 @@ public class BTNode : CustomStringConvertible {
         printInOrder(node: node.right)
     }
 
+    public func printStack() {
+        var nodes = [BTNode]()
+        nodes.append(self)
+        while nodes.count > 0 {
+            let node = nodes.removeFirst()
+            if let rightNode = node.right {
+                nodes.insert(rightNode, at: 0)
+            }
+            if let leftNode = node.left {
+                nodes.insert(leftNode, at: 0)
+            }
+            print("node=\(node.value)")
+        }
+    }
+
+    public func printStackInOrder() {
+        var nodes = [BTNode]()
+        var currentNode: BTNode? = self
+        while nodes.count > 0 || currentNode != nil {
+            if currentNode != nil {
+                nodes.insert(currentNode!, at: 0)
+                currentNode = currentNode?.left
+            } else {
+                let node = nodes.removeFirst()
+                currentNode = node.right
+                print("node = \(node)")
+            }
+        }
+    }
+
     public func reverse() {
         _ = reverse(node: self)
     }
@@ -59,9 +89,11 @@ public class BTNode : CustomStringConvertible {
         guard let node = node else {
             return nil
         }
+        print("INPUT: node=\(node.value), left=\(String(describing: node.left?.value)), right=\(String(describing: node.right?.value))")
         let tmpLeft = node.left
         node.left = reverse(node: node.right)
         node.right = reverse(node: tmpLeft)
+        print("OUTPUT: node=\(node.value), left=\(String(describing: node.left?.value)), right=\(String(describing: node.right?.value))")
         return node
     }
 
@@ -70,6 +102,14 @@ public class BTNode : CustomStringConvertible {
     }
 
     public func height(node: BTNode?) {
+
+    }
+
+    public func printRows() {
+
+    }
+
+    public func printRows(node: BTNode?) {
 
     }
 }

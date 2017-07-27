@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05092DBC1F291E59007D06AC /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
 		057001131F270201006997EA /* BinarySearchTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearchTree.playground; sourceTree = "<group>"; };
 		0572268C1F250C3D004C391D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0572268E1F250DB5004C391D /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Strings.playground; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 				05A01C2B1F23B73500D191CA /* Arrays.playground */,
 				0572268E1F250DB5004C391D /* Strings.playground */,
 				057001131F270201006997EA /* BinarySearchTree.playground */,
+				05092DBC1F291E59007D06AC /* Testing.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";
