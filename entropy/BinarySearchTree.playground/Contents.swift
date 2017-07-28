@@ -21,7 +21,7 @@ func bst() -> BTNode {
     return bstRoot
 }
 
-// Binary tree
+// Binary Tree
 func bt() -> BTNode {
     let btRoot = BTNode(value: 1)
     let bt1 = BTNode(value: 3)
@@ -36,6 +36,24 @@ func bt() -> BTNode {
     bt1.right = bt4
     btRoot.right = bt5
     bt5.right = bt6
+    return btRoot
+}
+
+// Symetric Binary Tree
+func symetric() -> BTNode {
+    let btRoot = BTNode(value: 1)
+    let bt1 = BTNode(value: 2)
+    let bt2 = BTNode(value: 4)
+    let bt3 = BTNode(value: 5)
+    let bt4 = BTNode(value: 2)
+    let bt5 = BTNode(value: 4)
+    let bt6 = BTNode(value: 5)
+    btRoot.left = bt1
+    bt1.left = bt2
+    bt2.right = bt3
+    btRoot.right = bt4
+    bt4.left = bt5
+    bt4.right = bt6
     return btRoot
 }
 
@@ -79,3 +97,13 @@ bstRoot.printIterativeRows()
 
 print("\nBST Breadth First")
 bstRoot.printBreadth()
+
+// Symetric Tree
+var symmetricBT = symetric()
+symmetricBT.printRows()
+
+bstRoot.isSymetric()
+symmetricBT.isSymetric()
+
+
+

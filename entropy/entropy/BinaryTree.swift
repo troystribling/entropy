@@ -105,12 +105,6 @@ public class BTNode : CustomStringConvertible {
         }
         let leftHeight = maxHeight(node: node.left)
         let rightHeight = maxHeight(node: node.right)
-        if leftHeight == 0 {
-            return rightHeight + 1
-        }
-        if rightHeight == 0 {
-            return leftHeight + 1
-        }
         return (leftHeight > rightHeight ? leftHeight : rightHeight) + 1
     }
 
@@ -131,6 +125,19 @@ public class BTNode : CustomStringConvertible {
             return leftHeight + 1
         }
         return (leftHeight < rightHeight ? leftHeight : rightHeight) + 1
+    }
+
+    public func isBalanced() -> Bool {
+        return isBalanced(node: self)
+    }
+
+    public func isBalanced(node: BTNode?) -> Bool {
+        guard let node = node else {
+            return false
+        }
+        let leftHeight = maxHeight(node: node.left)
+        let rightHeight = maxHeight(node: node.right)
+        return abs(leftHeight - rightHeight) == 1 && isBalanced(node: node.left) && isBalanced(node: node.right)
     }
 
     public func printBreadth() {
@@ -193,6 +200,23 @@ public class BTNode : CustomStringConvertible {
                 }
             }
         }
+    }
+
+    public func isSymetric() -> Bool {
+        return isSymetric(node1: self.right, node2: self.left)
+    }
+
+    public func isSymetric(node1: BTNode?, node2: BTNode?) -> Bool {
+        if node1 == nil || node2 == nil {
+            return true
+        }
+        if node1 == nil || node2 == nil {
+            return false
+        }
+        if node1?.value == node2?.value {
+            return isSymetric(node1: node1?.left, node2: node2?.right) && isSymetric(node1: node1?.right, node2: node2?.left)
+        }
+        return false
     }
 }
 
