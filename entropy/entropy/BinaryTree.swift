@@ -51,7 +51,7 @@ public class BTNode : CustomStringConvertible {
         printInOrder(node: node.right)
     }
 
-    public func printStack() {
+    public func printIterative() {
         var nodes = [BTNode]()
         nodes.append(self)
         while nodes.count > 0 {
@@ -66,7 +66,7 @@ public class BTNode : CustomStringConvertible {
         }
     }
 
-    public func printStackInOrder() {
+    public func printIterativeInOrder() {
         var nodes = [BTNode]()
         var currentNode: BTNode? = self
         while nodes.count > 0 || currentNode != nil {
@@ -89,33 +89,110 @@ public class BTNode : CustomStringConvertible {
         guard let node = node else {
             return nil
         }
-        print("INPUT: node=\(node.value), left=\(String(describing: node.left?.value)), right=\(String(describing: node.right?.value))")
         let tmpLeft = node.left
         node.left = reverse(node: node.right)
         node.right = reverse(node: tmpLeft)
-        print("OUTPUT: node=\(node.value), left=\(String(describing: node.left?.value)), right=\(String(describing: node.right?.value))")
         return node
     }
 
-    public func height() -> Int {
-        return height(node: self)
+    public func maxHeight() -> Int {
+        return maxHeight(node: self)
     }
 
-    public func height(node: BTNode?) -> Int {
+    public func maxHeight(node: BTNode?) -> Int {
         guard let node = node else {
             return 0
         }
-        let leftHeight = height(node: node.left)
-        let rightHeight = height(node: node.right)
-        return leftHeight < rightHeight ? leftHeight : rightHeight
+        let leftHeight = maxHeight(node: node.left)
+        let rightHeight = maxHeight(node: node.right)
+        if leftHeight == 0 {
+            return rightHeight + 1
+        }
+        if rightHeight == 0 {
+            return leftHeight + 1
+        }
+        return (leftHeight > rightHeight ? leftHeight : rightHeight) + 1
+    }
+
+    public func minHeight() -> Int{
+        return minHeight(node: self)
+    }
+
+    public func minHeight(node: BTNode?) -> Int {
+        guard let node = node else {
+            return 0
+        }
+        let leftHeight = minHeight(node: node.left)
+        let rightHeight = minHeight(node: node.right)
+        if leftHeight == 0 {
+            return rightHeight + 1
+        }
+        if rightHeight == 0 {
+            return leftHeight + 1
+        }
+        return (leftHeight < rightHeight ? leftHeight : rightHeight) + 1
+    }
+
+    public func printBreadth() {
+        printBreadth(nodes: [self])
+    }
+
+    public func printBreadth(nodes: [BTNode]) {
+        guard nodes.count > 0 else {
+            return
+        }
+        var children = [BTNode]()
+        for node in nodes {
+            print("node=\(node.value)")
+            if let left = node.left {
+                children.append(left)
+            }
+            if let right = node.right {
+                children.append(right)
+            }
+        }
+        printBreadth(nodes: children)
     }
 
     public func printRows() {
-        printRows(node: self, rows: [])
+        printRows(nodes: [self])
     }
 
-    public func printRows(node: BTNode?, rows: [BTNode]) {
-        
+    public func printRows(nodes: [BTNode]) {
+        guard nodes.count > 0 else {
+            return
+        }
+        var children = [BTNode]()
+        let values = nodes.map { String($0.value) }.joined(separator: ",")
+        print(values)
+        for node in nodes {
+            if let left = node.left {
+                children.append(left)
+            }
+            if let right = node.right {
+                children.append(right)
+            }
+        }
+        printRows(nodes: children)
+    }
+
+    public func printIterativeRows() {
+        var nodes = [BTNode]()
+        nodes.append(self)
+        while nodes.count > 0 {
+            let values = nodes.map { String($0.value) }.joined(separator: ",")
+            print(values)
+            let count = nodes.count
+            for _ in 0..<count {
+                let node = nodes.removeFirst()
+                if let left = node.left {
+                    nodes.append(left)
+                }
+                if let right = node.right {
+                    nodes.append(right)
+                }
+            }
+        }
     }
 }
 

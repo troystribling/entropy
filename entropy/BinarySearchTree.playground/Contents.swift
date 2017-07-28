@@ -62,6 +62,20 @@ bstRoot.printInOrder()
 
 bstRoot = bst()
 print("\nBST print Stack")
-bstRoot.printStack()
+bstRoot.printIterative()
 print("\nBST print Stack In Order")
-bstRoot.printStackInOrder()
+bstRoot.printIterativeInOrder()
+
+// BST Height
+bstRoot.maxHeight()
+bstRoot.minHeight()
+
+// Breadth First Search
+print("\nBST Breadth First")
+bstRoot.printRows()
+
+print("\nBST Iterative Breadth First")
+bstRoot.printIterativeRows()
+
+print("\nBST Breadth First")
+bstRoot.printBreadth()
