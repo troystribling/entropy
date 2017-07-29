@@ -133,11 +133,19 @@ public class BTNode : CustomStringConvertible {
 
     public func isBalanced(node: BTNode?) -> Bool {
         guard let node = node else {
-            return false
+            return true
         }
         let leftHeight = maxHeight(node: node.left)
         let rightHeight = maxHeight(node: node.right)
-        return abs(leftHeight - rightHeight) == 1 && isBalanced(node: node.left) && isBalanced(node: node.right)
+        if abs(leftHeight - rightHeight) > 1 {
+            return false
+        }
+        let leftBalanced = isBalanced(node: node.left)
+        let rightBalanced = isBalanced(node: node.right)
+        if  leftBalanced && rightBalanced {
+            return true
+        }
+        return false
     }
 
     public func printBreadth() {

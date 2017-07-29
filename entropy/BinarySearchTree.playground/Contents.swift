@@ -30,9 +30,11 @@ func bt() -> BTNode {
     let bt4 = BTNode(value: 10)
     let bt5 = BTNode(value: 20)
     let bt6 = BTNode(value: 16)
+    let bt7 = BTNode(value: 11)
     root.left = bt1
     bt1.left = bt2
     bt2.left = bt3
+    bt3.right = bt7
     bt1.right = bt4
     root.right = bt5
     bt5.right = bt6
@@ -46,11 +48,11 @@ func symetric() -> BTNode {
     let bt2 = BTNode(value: 4)
     let bt3 = BTNode(value: 5)
     let bt4 = BTNode(value: 2)
-    let bt5 = BTNode(value: 4)
-    let bt6 = BTNode(value: 5)
+    let bt5 = BTNode(value: 5)
+    let bt6 = BTNode(value: 4)
     root.left = bt1
     bt1.left = bt2
-    bt2.right = bt3
+    bt1.right = bt3
     root.right = bt4
     bt4.left = bt5
     bt4.right = bt6
@@ -105,11 +107,17 @@ print("\nBT Iterative Breadth First")
 bstRoot.printIterativeRows()
 
 // Symetric Tree
+print("\nSymetric BT")
 var symmetricBT = symetric()
 symmetricBT.printRows()
-symmetricBT.printIterativeRows()
-bstRoot.isSymetric()
 symmetricBT.isSymetric()
+bstRoot.isSymetric()
+
+// Ballanced Tree
+bstRoot.isBalanced()
+symmetricBT.isBalanced()
+btRoot.isBalanced()
+
 
 
 
