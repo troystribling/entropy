@@ -22,7 +22,7 @@ public class LLNode: CustomStringConvertible, Hashable {
         return Int(arc4random())
     }
 
-    public init(value: Int) {
+    public init(value: Int = 0) {
         self.value = value
     }
 
@@ -122,16 +122,39 @@ public class LLNode: CustomStringConvertible, Hashable {
         return reversedNode
     }
 
-    public func reverseInPlace() {
-        var previousNode: LLNode? = self
-        var currentNode: LLNode? = self.next
+    public func reverseInPlace() -> LLNode? {
+        var previousNode: LLNode?
+        var currentNode: LLNode? = self
         while currentNode != nil {
             let nextNode = currentNode?.next
             currentNode?.next = previousNode
             previousNode = currentNode
             currentNode = nextNode
         }
+        return previousNode
     }
+}
+
+public func addLL(lhs: LLNode, rhs: LLNode) -> LLNode {
+    let firstTotalSum = lhs.value + rhs.value
+    let firstSum = firstTotalSum % 10
+    var sumCarry = firstTotalSum / 10
+    let sumRootNode: LLNode = LLNode(value: firstSum)
+    var sumNextNode: LLNode? = sumRootNode
+    var lhsNextNode = lhs.next
+    var rhsNextNode = rhs.next
+    while lhsNextNode != nil || rhsNextNode != nil || sumCarry > 0 {
+        let lhsValue = lhsNextNode?.value ?? 0
+        let rhsValue = rhsNextNode?.value ?? 0
+        let totalSum = lhsValue + rhsValue + sumCarry
+        let sum = totalSum % 10
+        sumCarry = totalSum / 10
+        sumNextNode?.next = LLNode(value: sum)
+        sumNextNode = sumNextNode?.next
+        lhsNextNode = lhsNextNode?.next
+        rhsNextNode = rhsNextNode?.next
+    }
+    return sumRootNode
 }
 
 

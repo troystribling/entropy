@@ -34,6 +34,22 @@ func cyclicList() -> LLNode {
     return root
 }
 
+func lhsList() -> LLNode {
+    let n1 = LLNode(value: 9)
+    let n2 = LLNode(value: 8)
+    let n3 = LLNode(value: 9)
+    n1.next = n2
+    n2.next = n3
+    return n1
+}
+
+func rhsList() -> LLNode {
+    let n1 = LLNode(value: 1)
+    let n2 = LLNode(value: 2)
+    n1.next = n2
+    return n1
+}
+
 // Print lists
 print("Print LL")
 var simple = simpleList()
@@ -70,8 +86,22 @@ simple = simpleList()
 simple.reverse().printInOrder()
 
 print("\nReverse In Place LL")
-simple.reverseInPlace()
-simple.printInOrder()
+simple.reverseInPlace()!.printInOrder()
+
+// Sum Linked Lists
+print("\nSum LL")
+print("LHS")
+let lhs = lhsList()
+lhs.printInOrder()
+print("RHS")
+let rhs = rhsList()
+rhs.printInOrder()
+let sum = addLL(lhs: lhs, rhs: rhs)
+print("Sum")
+sum.printInOrder()
+
+10/10
+
 
 
 
