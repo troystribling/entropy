@@ -30,6 +30,17 @@ public class LLNode: CustomStringConvertible, Hashable {
         return rhs.value == lhs.value
     }
 
+    public func tail() -> LLNode? {
+        guard self.next != nil else {
+            return self
+        }
+        var currentNode: LLNode? = self
+        while currentNode?.next != nil {
+            currentNode = currentNode?.next
+        }
+        return currentNode
+    }
+
     public func printInOrder() {
         var node: LLNode? = self
         while node != nil {

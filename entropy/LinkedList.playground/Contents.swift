@@ -100,7 +100,10 @@ let sum = addLL(lhs: lhs, rhs: rhs)
 print("Sum")
 sum.printInOrder()
 
-10/10
+// LL Tail
+print("\n LL Tail")
+simple = simpleList()
+print(String(describing: simple.tail()))
 
 
 
