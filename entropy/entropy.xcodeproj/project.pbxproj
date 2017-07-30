@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		056E6A291F2D0804000D917F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E6A281F2D0804000D917F /* LinkedList.swift */; };
 		0572268D1F250C3D004C391D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572268C1F250C3D004C391D /* Strings.swift */; };
 		05A01C1A1F23B6AA00D191CA /* entropy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A01C101F23B6AA00D191CA /* entropy.framework */; };
 		05A01C1F1F23B6AA00D191CA /* entropyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A01C1E1F23B6AA00D191CA /* entropyTests.swift */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		05092DBC1F291E59007D06AC /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
+		056E6A271F2D0791000D917F /* LinkedList.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedList.playground; sourceTree = "<group>"; };
+		056E6A281F2D0804000D917F /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		057001131F270201006997EA /* BinarySearchTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearchTree.playground; sourceTree = "<group>"; };
 		0572268C1F250C3D004C391D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0572268E1F250DB5004C391D /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Strings.playground; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 				05A01C361F23CB1E00D191CA /* MergeSort.swift */,
 				05A01C381F23CB2A00D191CA /* BinarySearch.swift */,
 				0572268C1F250C3D004C391D /* Strings.swift */,
+				056E6A281F2D0804000D917F /* LinkedList.swift */,
 			);
 			path = entropy;
 			sourceTree = "<group>";
@@ -116,6 +120,7 @@
 				0572268E1F250DB5004C391D /* Strings.playground */,
 				057001131F270201006997EA /* BinarySearchTree.playground */,
 				05092DBC1F291E59007D06AC /* Testing.playground */,
+				056E6A271F2D0791000D917F /* LinkedList.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				05A01C351F23CB0E00D191CA /* BinaryTree.swift in Sources */,
 				0572268D1F250C3D004C391D /* Strings.swift in Sources */,
 				05A01C391F23CB2A00D191CA /* BinarySearch.swift in Sources */,
+				056E6A291F2D0804000D917F /* LinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
