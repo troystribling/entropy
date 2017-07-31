@@ -35,6 +35,7 @@
 		056E6A281F2D0804000D917F /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		056E6A2A1F2E6C83000D917F /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		056E6A2C1F2E6C94000D917F /* Numbers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Numbers.playground; sourceTree = "<group>"; };
+		056E6A2D1F2F890F000D917F /* BinaryTreeTest1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinaryTreeTest1.playground; sourceTree = "<group>"; };
 		057001131F270201006997EA /* BinarySearchTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearchTree.playground; sourceTree = "<group>"; };
 		0572268C1F250C3D004C391D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0572268E1F250DB5004C391D /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Strings.playground; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 				05092DBC1F291E59007D06AC /* Testing.playground */,
 				056E6A271F2D0791000D917F /* LinkedList.playground */,
 				056E6A2C1F2E6C94000D917F /* Numbers.playground */,
+				056E6A2D1F2F890F000D917F /* BinaryTreeTest1.playground */,
 			);
 			name = Playgrounds;
 			sourceTree = "<group>";

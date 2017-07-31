@@ -23,7 +23,7 @@ public func fibonacciIterative(n: Int) -> Int {
     var previous1 = 1
     var currentValue = 0
 
-    for _ in (0...n-2) {
+    for _ in (2...n) {
         currentValue = previous2 + previous1
         previous2 = previous1
         previous1 = currentValue
