@@ -71,6 +71,11 @@ func simpleList() -> LLNode {
     return root
 }
 
+func shortList() -> LLNode {
+    let root = LLNode(value: 1)
+    return root
+}
+
 func cyclicList() -> LLNode {
     let root = LLNode(value: 1)
     let n1 = LLNode(value: 2)
@@ -102,3 +107,29 @@ func rhsList() -> LLNode {
     n1.next = n2
     return n1
 }
+
+var list = simpleList()
+var small = shortList()
+var cyclic = cyclicList()
+
+// print linked list
+list.printInOrder()
+
+// return tail
+print("\nLL Tail")
+
+// return node with value
+print("\nLL with value")
+
+// delete node
+print("\nLL delete node")
+
+// reverse
+print("\nLL reverse")
+
+// cyclic test
+print("\nLL cyclic test")
+
+// LL adding machine
+print("\nLL add nodes")
+

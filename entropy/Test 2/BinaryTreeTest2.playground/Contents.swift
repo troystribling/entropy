@@ -135,3 +135,31 @@ func symetric() -> BTNode {
 var bstRoot = bst()
 var btRoot = bt()
 var symetricRoot = symetric()
+
+// Print in order
+print("print BST")
+
+// Validate BST
+print("\nivalidate BST")
+
+// Reverse BT
+print("\nReverse BT")
+
+bstRoot = bst()
+print("\nBT print stack")
+
+print("\nBST print stack in order")
+
+// BST Height
+print("\nBT print rows")
+
+// Breadth First Search
+print("\nBT print rows")
+
+// Symetric Tree
+print("\nSymetric BT")
+var symmetricBT = symetric()
+
+// Ballanced Tree
+print("\nBalanced BT")
+

@@ -100,6 +100,3 @@ isAnagram(string: testString)
 
 testString = "lool"
 isAnagram(string: testString)
-
-let test: Set = [1,2,3]
-let test2 = test + [5]

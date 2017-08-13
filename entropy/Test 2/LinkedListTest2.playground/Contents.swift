@@ -15,14 +15,29 @@ class LLNode: CustomStringConvertible {
     }
 
     func printInOrder() {
-
+        var currentNode: LLNode? = self
+        while currentNode != nil {
+            print(String(describing: currentNode))
+            currentNode = currentNode?.next
+        }
     }
 
     func tail() -> LLNode? {
-        return nil
+        var currentNode: LLNode? = self
+        while currentNode?.next != nil {
+            currentNode = currentNode?.next
+        }
+        return currentNode
     }
 
     func find(value: Int) -> LLNode? {
+        var currentNode: LLNode? = self
+        while currentNode != nil {
+            if currentNode?.value == value {
+                return currentNode
+            }
+            currentNode = currentNode?.next
+        }
         return nil
     }
 
@@ -71,6 +86,11 @@ func simpleList() -> LLNode {
     return root
 }
 
+func shorList() -> LLNode {
+    let root = LLNode(value: 1)
+    return root
+}
+
 func cyclicList() -> LLNode {
     let root = LLNode(value: 1)
     let n1 = LLNode(value: 2)
@@ -102,3 +122,32 @@ func rhsList() -> LLNode {
     n1.next = n2
     return n1
 }
+
+var list = simpleList()
+var small = shorList()
+var cyclic = cyclicList()
+
+// print linked list
+list.printInOrder()
+
+// return tail
+print("\nLL Tail")
+
+// return node with value
+print("\nLL with value")
+
+// delete node
+print("\nLL delete node")
+
+// reverse
+print("\nLL reverse")
+
+// cyclic test
+print("\nLL cyclic test")
+
+// LL adding machine
+print("\nLL add nodes")
+
+
+
+
