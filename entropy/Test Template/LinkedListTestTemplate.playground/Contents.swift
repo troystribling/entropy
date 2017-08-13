@@ -122,10 +122,14 @@ print("\nLL Tail")
 print("\nLL with value")
 
 // delete node
+print("\nLL delete node with value")
+
 print("\nLL delete node")
 
 // reverse
 print("\nLL reverse")
+
+print("\nLL reverse in place")
 
 // cyclic test
 print("\nLL cyclic test")

@@ -42,27 +42,65 @@ class LLNode: CustomStringConvertible {
     }
 
     func delete(value: Int) -> LLNode? {
-        return nil
+        guard self.value != value else {
+            return next
+        }
+        var currentNode: LLNode? = next
+        var previousNode: LLNode?
+        while currentNode != nil {
+            if currentNode?.value == value {
+                previousNode?.next = currentNode?.next
+                break
+            }
+            previousNode = currentNode
+            currentNode = currentNode?.next
+        }
+        return self
     }
 
-    func delete(node: LLNode?) -> LLNode? {
-        return nil
+    func delete(node: LLNode) {
+        guard let nextNode = node.next else {
+            return
+        }
+        node.value = nextNode.value
+        node.next = nextNode.next
     }
 
     func isCyclic() -> Bool {
-        return false
-    }
-
-    func isCyclicBetter() -> Bool {
+        var slowReference: LLNode? = self
+        var fastReference = next?.next
+        while fastReference != nil {
+            if fastReference === slowReference {
+                return true
+            }
+            slowReference = slowReference?.next
+            fastReference = fastReference?.next?.next
+        }
         return false
     }
 
     func reverse() -> LLNode {
-        return self
+        var reversedNode = LLNode(value: value)
+        var currentNode = next
+        while currentNode != nil {
+            let newNode = LLNode(value: currentNode!.value)
+            newNode.next = reversedNode
+            reversedNode = newNode
+            currentNode = currentNode?.next
+        }
+        return reversedNode
     }
 
     func reverseInPlace() -> LLNode? {
-        return nil
+        var currentNode: LLNode? = self
+        var previousNode: LLNode?
+        while currentNode != nil {
+            let nextNode = currentNode?.next
+            currentNode?.next = previousNode
+            previousNode = currentNode
+            currentNode = nextNode
+        }
+        return previousNode
     }
 }
 
@@ -86,7 +124,7 @@ func simpleList() -> LLNode {
     return root
 }
 
-func shorList() -> LLNode {
+func shortList() -> LLNode {
     let root = LLNode(value: 1)
     return root
 }
@@ -124,7 +162,7 @@ func rhsList() -> LLNode {
 }
 
 var list = simpleList()
-var small = shorList()
+var small = shortList()
 var cyclic = cyclicList()
 
 // print linked list
@@ -132,22 +170,58 @@ list.printInOrder()
 
 // return tail
 print("\nLL Tail")
+print(String(describing: list.tail()))
+print(String(describing: small.tail()))
 
 // return node with value
 print("\nLL with value")
+print(String(describing: list.find(value: 3)))
+print(String(describing: list.find(value: 10)))
 
 // delete node
+print("\nLL delete node with value")
+var newList = list.delete(value: 3)
+newList?.printInOrder()
+newList = list.delete(value: 10)
+print("\n")
+newList?.printInOrder()
+newList = small.delete(value: 1)
+print("\n")
+newList = list.delete(value: 1)
+newList?.printInOrder()
+print("\n")
+newList = list.delete(value: 6)
+newList?.printInOrder()
+print("\n")
+print(String(describing: newList))
+
+list = simpleList()
+
 print("\nLL delete node")
+let deleteNode = list.find(value: 4)
+list.delete(node: deleteNode!)
+list.printInOrder()
 
 // reverse
 print("\nLL reverse")
+var reversedList = list.reverse()
+reversedList.printInOrder()
+print("\n")
+reversedList = small.reverse()
+reversedList.printInOrder()
+
+print("\nLL reverse in place")
+list.reverseInPlace()?.printInOrder()
+print("\n")
+small.reverseInPlace()?.printInOrder()
+
+list = simpleList()
 
 // cyclic test
 print("\nLL cyclic test")
+print(cyclic.isCyclic())
+print(list.isCyclic())
 
 // LL adding machine
 print("\nLL add nodes")
-
-
-
 
