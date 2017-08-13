@@ -13,3 +13,6 @@ array.append(3)
 array.removeFirst()
 array
 
+
+
+

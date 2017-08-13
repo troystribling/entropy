@@ -137,3 +137,49 @@ public func isAnagram(string: String) -> Bool {
     return oddLetters.count <= 1
 }
 
+extension String {
+
+    public func isSubsequence(subSequence: String) -> Bool {
+        let stringLength = characters.count
+        let subStringLength = subSequence.characters.count
+        var j = 0
+        for i in (0..<stringLength) {
+            let stringIndex = index(startIndex, offsetBy: i)
+            let substringIndex = subSequence.index(subSequence.startIndex, offsetBy: j)
+            let char = characters[stringIndex]
+            let subChar = subSequence.characters[substringIndex]
+            if char == subChar {
+                j += 1
+            }
+            if j >= subStringLength {
+                return true
+            }
+        }
+        return false
+    }
+
+    public func isSubstring(substring: String) -> Bool {
+        let stringLength = characters.count
+        let subStringLength = substring.characters.count
+        print(stringLength)
+        print(subStringLength)
+        for i in (0..<stringLength) {
+            for j in (0..<subStringLength) {
+                guard i + j < stringLength && i + j < subStringLength else {
+                    return false
+                }
+                let stringIndex = index(startIndex, offsetBy: i + j)
+                let subStringIndex = index(substring.startIndex, offsetBy: i)
+                let char = characters[stringIndex]
+                let subChar = substring.characters[subStringIndex]
+                if char != subChar {
+                    break
+                } else if j == subStringLength - 1 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+}

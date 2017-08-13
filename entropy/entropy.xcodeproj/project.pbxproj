@@ -31,12 +31,10 @@
 
 /* Begin PBXFileReference section */
 		05092DBC1F291E59007D06AC /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
-		0545CFD21F2FA2E900623D97 /* LinkedList1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedList1.playground; sourceTree = "<group>"; };
 		056E6A271F2D0791000D917F /* LinkedList.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedList.playground; sourceTree = "<group>"; };
 		056E6A281F2D0804000D917F /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		056E6A2A1F2E6C83000D917F /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		056E6A2C1F2E6C94000D917F /* Numbers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Numbers.playground; sourceTree = "<group>"; };
-		056E6A2D1F2F890F000D917F /* BinaryTest1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinaryTest1.playground; sourceTree = "<group>"; };
 		057001131F270201006997EA /* BinarySearchTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearchTree.playground; sourceTree = "<group>"; };
 		0572268C1F250C3D004C391D /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0572268E1F250DB5004C391D /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Strings.playground; sourceTree = "<group>"; };
@@ -51,6 +49,17 @@
 		05A01C321F23CAFF00D191CA /* Queues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queues.swift; sourceTree = "<group>"; };
 		05A01C341F23CB0E00D191CA /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		05A01C361F23CB1E00D191CA /* MergeSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		05EB431D1F3FD63800017B84 /* ArrayTestTemplate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArrayTestTemplate.playground; sourceTree = "<group>"; };
+		05EB431E1F3FD63800017B84 /* BinaryTreeTestTemplate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinaryTreeTestTemplate.playground; sourceTree = "<group>"; };
+		05EB431F1F3FD63800017B84 /* LinkedListTestTemplate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedListTestTemplate.playground; sourceTree = "<group>"; };
+		05EB43201F3FD63800017B84 /* StringTestTemplate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StringTestTemplate.playground; sourceTree = "<group>"; };
+		05EB43211F3FD6F800017B84 /* ArrayTest1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArrayTest1.playground; sourceTree = "<group>"; };
+		05EB43221F3FD6F800017B84 /* BinaryTreeTest1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinaryTreeTest1.playground; sourceTree = "<group>"; };
+		05EB43231F3FD6F800017B84 /* LinkedList1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedList1.playground; sourceTree = "<group>"; };
+		05EB43241F3FD70600017B84 /* ArrayTest2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ArrayTest2.playground; path = "Test 2/ArrayTest2.playground"; sourceTree = "<group>"; };
+		05EB43251F3FD70600017B84 /* BinaryTreeTest2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = BinaryTreeTest2.playground; path = "Test 2/BinaryTreeTest2.playground"; sourceTree = "<group>"; };
+		05EB43261F3FD70600017B84 /* LinkedListTest2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = LinkedListTest2.playground; path = "Test 2/LinkedListTest2.playground"; sourceTree = "<group>"; };
+		05EB43271F3FD70600017B84 /* StringTest2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = StringTest2.playground; path = "Test 2/StringTest2.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0545CFD31F2FA46600623D97 /* Test1 */ = {
+		0545CFD31F2FA46600623D97 /* Test 1 */ = {
 			isa = PBXGroup;
 			children = (
-				056E6A2D1F2F890F000D917F /* BinaryTest1.playground */,
-				0545CFD21F2FA2E900623D97 /* LinkedList1.playground */,
+				05EB43211F3FD6F800017B84 /* ArrayTest1.playground */,
+				05EB43221F3FD6F800017B84 /* BinaryTreeTest1.playground */,
+				05EB43231F3FD6F800017B84 /* LinkedList1.playground */,
 			);
-			name = Test1;
+			path = "Test 1";
 			sourceTree = "<group>";
 		};
 		05A01C061F23B6AA00D191CA = {
@@ -128,7 +138,9 @@
 		05A01C2A1F23B72200D191CA /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				0545CFD31F2FA46600623D97 /* Test1 */,
+				05EB431B1F3FCBE700017B84 /* Test Template */,
+				05EB43161F3F6FE700017B84 /* Test 2 */,
+				0545CFD31F2FA46600623D97 /* Test 1 */,
 				05A01C2B1F23B73500D191CA /* Arrays.playground */,
 				0572268E1F250DB5004C391D /* Strings.playground */,
 				057001131F270201006997EA /* BinarySearchTree.playground */,
@@ -137,6 +149,28 @@
 				056E6A2C1F2E6C94000D917F /* Numbers.playground */,
 			);
 			name = Playgrounds;
+			sourceTree = "<group>";
+		};
+		05EB43161F3F6FE700017B84 /* Test 2 */ = {
+			isa = PBXGroup;
+			children = (
+				05EB43241F3FD70600017B84 /* ArrayTest2.playground */,
+				05EB43251F3FD70600017B84 /* BinaryTreeTest2.playground */,
+				05EB43261F3FD70600017B84 /* LinkedListTest2.playground */,
+				05EB43271F3FD70600017B84 /* StringTest2.playground */,
+			);
+			name = "Test 2";
+			sourceTree = "<group>";
+		};
+		05EB431B1F3FCBE700017B84 /* Test Template */ = {
+			isa = PBXGroup;
+			children = (
+				05EB431D1F3FD63800017B84 /* ArrayTestTemplate.playground */,
+				05EB431E1F3FD63800017B84 /* BinaryTreeTestTemplate.playground */,
+				05EB431F1F3FD63800017B84 /* LinkedListTestTemplate.playground */,
+				05EB43201F3FD63800017B84 /* StringTestTemplate.playground */,
+			);
+			path = "Test Template";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

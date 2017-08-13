@@ -41,3 +41,12 @@ testArray = [1,2,3,4,5, 6]
 rotate2(array: &testArray, pivot: 1)
 testArray = [1,2,3,4,5, 6]
 rotate2(array: &testArray, pivot: 5)
+
+// has substring
+"This is a test string".isSubsequence(subSequence: "isstring")
+"This is a test string".isSubsequence(subSequence: "zip")
+
+"zip".isSubsequence(subSequence: "zip")
+
+"This is a test string".isSubstring(substring: "isstring")
+"This is a test string".isSubstring(substring: "is")
