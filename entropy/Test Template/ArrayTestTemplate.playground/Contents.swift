@@ -17,7 +17,16 @@ extension Array {
     }
 
     func extema(by: (Element, Element) -> Bool) -> Element? {
-        return nil
+        guard count > 0 else {
+            return nil
+        }
+        var extemValue = self[0]
+        for element in self {
+            if by(extemValue, element) {
+                extemValue = element
+            }
+        }
+        return extemValue
     }
 
     mutating func rotate(pivot: Int) {
